@@ -1,0 +1,246 @@
+{
+  "configuration" : { },
+  "description" : "This is a test",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedAgent" : "structurizr-ui",
+  "lastModifiedDate" : "2024-09-27T19:48:37Z",
+  "model" : {
+    "people" : [ {
+      "description" : "Person helping Sail as a Volunteer",
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "Volunteer",
+      "properties" : {
+        "structurizr.dsl.identifier" : "u"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "2",
+        "id" : "8",
+        "properties" : {
+          "structurizr.dsl.identifier" : "46587d87-47c9-47b2-853b-54d8210cbc76"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "3",
+        "id" : "9",
+        "properties" : {
+          "structurizr.dsl.identifier" : "db43fee3-db73-4bbb-ad16-4b3c0be41e65"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "containers" : [ {
+        "documentation" : { },
+        "id" : "3",
+        "name" : "Mobile Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "ss.app"
+        },
+        "relationships" : [ {
+          "description" : "Does chat functions using [JSON/HTTP]",
+          "destinationId" : "4",
+          "id" : "11",
+          "properties" : {
+            "structurizr.dsl.identifier" : "27a44afc-460e-455c-b051-7f5ef5c1ea9a"
+          },
+          "sourceId" : "3",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Does authentication function using [JSON/HTTP]",
+          "destinationId" : "6",
+          "id" : "13",
+          "properties" : {
+            "structurizr.dsl.identifier" : "f8cca324-7fb3-4b5f-b171-72e5032691ef"
+          },
+          "sourceId" : "3",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "group" : "Chat Service",
+        "id" : "4",
+        "name" : "Chat Microservice",
+        "properties" : {
+          "structurizr.dsl.identifier" : "ss.cs"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "5",
+          "id" : "10",
+          "properties" : {
+            "structurizr.dsl.identifier" : "60f42d62-021b-4301-ac81-139b93cd2ea3"
+          },
+          "sourceId" : "4",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "group" : "Chat Service",
+        "id" : "5",
+        "name" : "Chat Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "ss.cdb"
+        },
+        "tags" : "Element,Container,Database"
+      }, {
+        "documentation" : { },
+        "group" : "Authentication Service",
+        "id" : "6",
+        "name" : "Authentication Microservice",
+        "properties" : {
+          "structurizr.dsl.identifier" : "ss.as"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "7",
+          "id" : "12",
+          "properties" : {
+            "structurizr.dsl.identifier" : "62109e0b-e55c-4149-bedf-72ad907efb51"
+          },
+          "sourceId" : "6",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "group" : "Authentication Service",
+        "id" : "7",
+        "name" : "Authentication Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "ss.adb"
+        },
+        "tags" : "Element,Container,Database"
+      } ],
+      "documentation" : { },
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "Sail Volunteer App",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ss"
+      },
+      "tags" : "Element,Software System"
+    } ]
+  },
+  "name" : "Test",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlICJUZXN0IiAiVGhpcyBpcyBhIHRlc3QiCgohaWRlbnRpZmllcnMgaGllcmFyY2hpY2FsCgptb2RlbCB7CiAgICB1ID0gcGVyc29uICJWb2x1bnRlZXIiICJQZXJzb24gaGVscGluZyBTYWlsIGFzIGEgVm9sdW50ZWVyIgogICAgc3MgPSBzb2Z0d2FyZVN5c3RlbSAiU2FpbCBWb2x1bnRlZXIgQXBwIiB7CiAgICAgICAgYXBwID0gY29udGFpbmVyICJNb2JpbGUgQXBwbGljYXRpb24iCiAgICAgICAgc2VydmljZTEgPSBncm91cCAiQ2hhdCBTZXJ2aWNlIiB7CiAgICAgICAgICAgIGNzID0gY29udGFpbmVyICJDaGF0IE1pY3Jvc2VydmljZSIKICAgICAgICAgICAgY2RiID0gY29udGFpbmVyICJDaGF0IERhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICB0YWdzICJEYXRhYmFzZSIKICAgICAgICAgICAgfQogICAgICAgIH0KICAgICAgICBzZXJ2aWNlMiA9IGdyb3VwICJBdXRoZW50aWNhdGlvbiBTZXJ2aWNlIiB7CiAgICAgICAgICAgIGFzID0gY29udGFpbmVyICJBdXRoZW50aWNhdGlvbiBNaWNyb3NlcnZpY2UiCiAgICAgICAgICAgIGFkYiA9IGNvbnRhaW5lciAiQXV0aGVudGljYXRpb24gRGF0YWJhc2UiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQogICAgLy8gQXBwCiAgICB1IC0+IHNzICJVc2VzIgogICAgdSAtPiBzcy5hcHAgIlVzZXMiCiAgICAvLyBDaGF0IHNlcnZpY2UKICAgIHNzLmNzIC0+IHNzLmNkYiAiUmVhZHMgZnJvbSBhbmQgd3JpdGVzIHRvIgogICAgc3MuYXBwIC0+IHNzLmNzICJEb2VzIGNoYXQgZnVuY3Rpb25zIHVzaW5nIFtKU09OL0hUVFBdIgogICAgLy8gQXV0aGVudGljYXRpb24gU2VydmljZQogICAgc3MuYXMgLT4gc3MuYWRiICJSZWFkcyBmcm9tIGFuZCB3cml0ZXMgdG8iCiAgICBzcy5hcHAgLT4gc3MuYXMgIkRvZXMgYXV0aGVudGljYXRpb24gZnVuY3Rpb24gdXNpbmcgW0pTT04vSFRUUF0iCiAgICAvLyBzcy5hcHAgLT4gc3MuczEgIkhUVFAoUykvVENQIgogICAgLy8gc3MxLnMxIC0+IHNzMS5zMiAiR3JhcGhRTCIKICAgIC8vIHNzMS53YSAtPiBzczEuczIgIlBpZGdlb24iCn0KCnZpZXdzIHsKICAgIHN5c3RlbUNvbnRleHQgc3MgIkRpYWdyYW0xIiB7CiAgICAgICAgaW5jbHVkZSB1IHNzCiAgICAgICAgYXV0b2xheW91dCBscgogICAgfQoKICAgIGNvbnRhaW5lciBzcyAiRGlhZ3JhbTIiIHsKICAgICAgICBpbmNsdWRlICoKICAgICAgICBhdXRvbGF5b3V0IGxyCiAgICB9CgogICAgc3R5bGVzIHsKICAgICAgICBlbGVtZW50ICJFbGVtZW50IiB7CiAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICB9CiAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgIGJhY2tncm91bmQgIzliMTkxZgogICAgICAgICAgICBzaGFwZSBwZXJzb24KICAgICAgICB9CiAgICAgICAgZWxlbWVudCAiU29mdHdhcmUgU3lzdGVtIiB7CiAgICAgICAgICAgIGJhY2tncm91bmQgI2JhMWUyNQogICAgICAgIH0KICAgICAgICBlbGVtZW50ICJDb250YWluZXIiIHsKICAgICAgICAgICAgYmFja2dyb3VuZCAjZDkyMzJiCiAgICAgICAgfQogICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgIHNoYXBlIGN5bGluZGVyCiAgICAgICAgfQogICAgfQoKCn0KCn0="
+  },
+  "views" : {
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "Diagram2",
+      "metadataSymbols" : "SquareBrackets",
+      "styles" : {
+        "elements" : [ {
+          "color" : "#ffffff",
+          "tag" : "Element"
+        }, {
+          "background" : "#9b191f",
+          "shape" : "Person",
+          "tag" : "Person"
+        }, {
+          "background" : "#ba1e25",
+          "tag" : "Software System"
+        }, {
+          "background" : "#d9232b",
+          "tag" : "Container"
+        }, {
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        } ]
+      },
+      "terminology" : { }
+    },
+    "containerViews" : [ {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 1517,
+        "width" : 3090
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 199,
+        "y" : 497
+      }, {
+        "id" : "3",
+        "x" : 899,
+        "y" : 547
+      }, {
+        "id" : "4",
+        "x" : 1649,
+        "y" : 239
+      }, {
+        "id" : "5",
+        "x" : 2399,
+        "y" : 239
+      }, {
+        "id" : "6",
+        "x" : 1649,
+        "y" : 851
+      }, {
+        "id" : "7",
+        "x" : 2399,
+        "y" : 851
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "Diagram2",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "10"
+      }, {
+        "id" : "11"
+      }, {
+        "id" : "12"
+      }, {
+        "id" : "13"
+      }, {
+        "id" : "9"
+      } ],
+      "softwareSystemId" : "2"
+    } ],
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "Diagram1",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "8"
+      } ],
+      "softwareSystemId" : "2"
+    } ]
+  }
+}
