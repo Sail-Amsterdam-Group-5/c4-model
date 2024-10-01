@@ -9,11 +9,10 @@ model {
     ss = softwareSystem "Sail Volunteer App" {
         app = container "Mobile Application" "The main interface for the volunteers to interact with the app"
 
-        cms = container "Web CMS" "Admin interface for managing app content"
 
         service1 = group "Authentication Service" {
             as = container "Authentication Microservice"
-            adb = container "Authentication Database" {
+            asdb = container "Authentication Database" {
                 tags "Database"
             }
         }
@@ -31,7 +30,7 @@ model {
         }
         service4 = group "Chat Service" {
             cs = container "Chat Microservice"
-            cdb = container "Chat Database" {
+            csdb = container "Chat Database" {
                 tags "Database"
             }
         }
@@ -43,28 +42,40 @@ model {
         }
         
     }
+
+    ss2 = softwareSystem "test system" {
+        cms = container "Web CMS" "Admin interface for managing app content"
+    }
     // App
-    u -> ss "Uses"
-    u -> ss.app "Uses"
-    admin -> ss.cms "Manages content through"
+    user -> ss "Uses"
+    user -> ss.app "Uses"
+    admin -> ss2 "Uses"
+    admin -> ss2.cms "Manages content through"
 
     //App interactions
     ss.app -> ss.as "Authentication [JSON/HTTP]"
-    ss.app -> ss.schs "Fetches schedule information [JSON/HTTP]"
+    ss.app -> ss.sch "Fetches schedule information [JSON/HTTP]"
     ss.app -> ss.ps "Fetches program data [JSON/HTTP]"
     ss.app -> ss.cs "Handles chat functions [JSON/HTTP]"
     ss.app -> ss.ms "Interacts with map [JSON/HTTP]"
 
     // Admin interactions
-    ss.cms -> ss.as "Uses for admin authentication"
-    ss.cms -> ss.schs "Manages schedule data"
-    ss.cms -> ss.ps "Manages program data"
-    ss.cms -> ss.ms "Manages map data"
+    ss2.cms -> ss.as "Uses for admin authentication"
+    ss2.cms -> ss.sch "Manages schedule data"
+    ss2.cms -> ss.ps "Manages program data"
+    ss2.cms -> ss.ms "Manages map data"
+
+    // Databases
+    ss.as -> ss.asdb
+    ss.sch -> ss.schdb
+    ss.ps -> ss.psdb
+    ss.cs -> ss.csdb
+    ss.ms -> ss.msdb
 }
 
 views {
     systemContext ss "SystemContext" {
-        include user admin ss
+        include user admin ss ss2
         autolayout lr
     }
 
@@ -91,4 +102,6 @@ views {
             shape cylinder
         }
     }
+}
+
 }
